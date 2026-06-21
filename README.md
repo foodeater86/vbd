@@ -1,7 +1,7 @@
 # Инструкция по выполению первой самостоятельной работы
 
 ## СРС 1:  Diagrams-as-a-code
-![](https://github.com/iqkdjos/bd/blob/main/srs1/graphviz.svg)
+![](https://github.com/foodeater86/vbd/blob/main/srs1/graphviz.svg)
 
 
 ---
