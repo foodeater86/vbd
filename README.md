@@ -17,21 +17,15 @@
 ---
 
 ## 1. Скачать python
-На Windows скачать python с официального сайта: https://www.python.org/downloads/
+скачать python с официального сайта: https://www.python.org/downloads/
 
-На Linux
-В командной строке выполните:
-
-```bash
-sudo apt install python3 python3-pip
-```
 ---
 
 ## 2. Скачать yoyo-migration
 В командной строке выполните:
 
 ```bash
-pip install yoyo-migrations
+python -m pip install yoyo-migrations
 ```
 ---
 
@@ -71,7 +65,7 @@ pip install yoyo-migrations
 В командной строке (находясь в папке проекта) выполните:
 
 ```bash
-yoyo apply
+python -m yoyo apply
 ```
 ---
 ## 6. Откат миграций
@@ -79,4 +73,4 @@ yoyo apply
 В командной строке (находясь в папке проекта) выполните:
 
 ```bash
-yoyo rollback
+python -m yoyo rollback
