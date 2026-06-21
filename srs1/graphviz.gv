@@ -1,0 +1,47 @@
+digraph database_schema {
+    rankdir=RL;
+    splines=ortho; 
+    
+    node [shape=plain];
+    edge [fontsize=10];
+
+    // === ТАБЛИЦЫ ===
+    manufacturer [label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+            <TR><TD COLSPAN="2" BGCOLOR="#eeeeee"><B>manufacturer</B></TD></TR>
+            <TR><TD>manufacturer_id</TD><TD>int (PK)</TD></TR>
+            <TR><TD>name</TD><TD>varchar(255)</TD></TR>
+            <TR><TD>country</TD><TD>varchar(255)</TD></TR>
+        </TABLE>>];
+
+    water [label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+            <TR><TD COLSPAN="2" BGCOLOR="#eeeeee"><B>water</B></TD></TR>
+            <TR><TD>water_id</TD><TD>int (PK)</TD></TR>
+            <TR><TD>water_name</TD><TD>varchar(255)</TD></TR>
+            <TR><TD>type</TD><TD>varchar(255)</TD></TR>
+            <TR><TD>manufacturer_id</TD><TD>int (FK)</TD></TR>
+        </TABLE>>];
+
+    indication [label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+            <TR><TD COLSPAN="2" BGCOLOR="#eeeeee"><B>indication</B></TD></TR>
+            <TR><TD>indication_id</TD><TD>int (PK)</TD></TR>
+            <TR><TD>indication_name</TD><TD>varchar(255)</TD></TR>
+            <TR><TD>description</TD><TD>varchar(255)</TD></TR>
+        </TABLE>>];
+
+    water_indication [label=<
+        <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0" BGCOLOR="#ffffff">
+            <TR><TD COLSPAN="2" BGCOLOR="#eeeeee"><B>water_indication</B></TD></TR>
+            <TR><TD>water_id</TD><TD>int (PK, FK)</TD></TR>
+            <TR><TD>indication_id</TD><TD>int (PK, FK)</TD></TR>
+        </TABLE>>];
+
+    
+    water -> manufacturer [label="1..N", dir=both, arrowtail=crow, arrowhead=none];
+
+    water_indication -> water [xlabel="1..N", dir=both, arrowtail=crow, arrowhead=none];
+
+    water_indication -> indication [label="1..N", dir=both, arrowtail=crow, arrowhead=none];
+}
